@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: complete-production-e2e-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+    - host: docs.devintripp.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: complete-production-e2e-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - docs.devintripp.com
+      secretName: docs-devintripp-com-tls

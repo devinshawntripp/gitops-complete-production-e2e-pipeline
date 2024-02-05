@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     app: complete-production-e2e-app
-  type: LoadBalancer # Changed from ClusterIP to LoadBalancer
+  type: ClusterIP
   ports:
     - protocol: TCP
-      port: 80 # External port
-      targetPort: 8080 # Pod's port
+      port: 80
+      targetPort: 8080
