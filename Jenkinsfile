@@ -15,7 +15,7 @@ pipeline{
 
         stage("Checkout from SCM"){
             steps{
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/devinshawntripp/gitops-complete-production-pipeline'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/devinshawntripp/gitops-complete-production-e2e-pipeline'
                 echo "========executing A========"
                 cleanWs()
             }
